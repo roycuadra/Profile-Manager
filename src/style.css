@@ -12,14 +12,6 @@ body {
     }
   }
 
-
-  /* Adjusted margin for smaller screens */
-@media (max-width: 576px) {
-    .container-fluid {
-      margin-top: 0.5rem;
-    }
-  }
-  
   
   .card {
     background-color: #1f1f1f;
@@ -27,13 +19,6 @@ body {
     padding: 2rem;
     
   }
-  
-  @media (max-width: 576px) {
-    .card {
-      max-width: 100%; /* Full width on small screens */
-    }
-  }
- 
   
   .card-title {
     color: #ffffff;
