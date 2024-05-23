@@ -13,18 +13,23 @@ export default function Auth() {
 
     setLoading(true);
     const { error } = await supabase.auth.signInWithOtp({ email });
-
     if (error) {
       Swal.fire({
         title: 'Error',
         text: error.error_description || error.message,
         icon: 'error',
+        customClass: {
+          popup: 'swal-wide' // Custom class for wider modals
+        }
       });
     } else {
       Swal.fire({
         title: 'Success',
         text: 'Check your email for the login link!',
         icon: 'success',
+        customClass: {
+          popup: 'swal-wide' // Custom class for wider modals
+        }
       });
     }
     setLoading(false);

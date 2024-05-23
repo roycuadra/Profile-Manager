@@ -4,7 +4,19 @@ body {
    
   }
 
-  .element {
+/* Ensure your custom styles are loaded after SweetAlert2's styles */
+.swal2-container .swal2-modal {
+  width: 300px !important; /* Adjust width as needed */
+  border-radius: 20px;
+  font-size: 1.0em !important; /* Adjust font size as needed */
+}
+
+
+  .swal-wide {
+    height: 400px !important;
+  }
+
+  .element, .container {
     max-width: 100%;
     height: auto;
     overflow: hidden;
