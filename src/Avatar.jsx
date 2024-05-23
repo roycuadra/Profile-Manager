@@ -56,35 +56,39 @@ export default function Avatar({ url, size, onUpload }) {
       setUploading(false)
     }
   }
-
-  return (
-    <div className="text-center">
-      {avatarUrl ? (
-        <img
-          src={avatarUrl}
-          alt="Avatar"
-          className="avatar image rounded-circle"
-          style={{ height: '200px', width: '200px', border: "5px solid #3498db " }}
-        />
-      ) : (
-        <div className="avatar no-image rounded-circle" style={{ height: size, width: size, backgroundColor: '#ddd' }} />
-      )}
-      <div style={{ width: size, marginLeft: "auto", marginRight: "auto" }} className="mt-3 text-center">
-        <label className=" btn btn-outline-success" htmlFor="single">
-          {uploading ? 'Uploading ...' : 'Upload'}
-        </label>
-        <input
-          style={{
-            visibility: 'hidden',
-            position: 'absolute',
-          }}
-          type="file"
-          id="single"
-          accept="image/*"
-          onChange={uploadAvatar}
-          disabled={uploading}
-        />
+    return (
+      <div className="text-center">
+        {avatarUrl ? (
+          <img
+            src={avatarUrl}
+            alt="Avatar"
+            className="avatar image rounded-circle"
+            style={{
+              height: '200px',
+              width: '200px',
+              border: "5px solid #3498db",
+              objectFit: 'cover' // Added object-fit property
+            }}
+          />
+        ) : (
+          <div className="avatar no-image rounded-circle" style={{ height: size, width: size, backgroundColor: '#ddd' }} />
+        )}
+        <div style={{ width: size, marginLeft: "auto", marginRight: "auto" }} className="mt-3 text-center">
+          <label className="btn btn-outline-success" htmlFor="single">
+            {uploading ? 'Uploading ...' : 'Upload'}
+          </label>
+          <input
+            style={{
+              visibility: 'hidden',
+              position: 'absolute',
+            }}
+            type="file"
+            id="single"
+            accept="image/*"
+            onChange={uploadAvatar}
+            disabled={uploading}
+          />
+        </div>
       </div>
-    </div>
-  )
+    )
 }

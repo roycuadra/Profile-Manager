@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react'
 import { supabase } from './supabaseClient'
 import PropTypes from 'prop-types'
 import Avatar from './Avatar'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Swal from 'sweetalert2';
 import './style.css' // Import custom CSS for adjustments
 
 export default function Account({ session }) {
@@ -62,8 +63,27 @@ export default function Account({ session }) {
       if (error) {
         throw error
       }
+
+       // Display success alert
+    Swal.fire({
+      title: 'Profile Updated!',
+      text: 'Your profile has been updated successfully.',
+      icon: 'success',
+      confirmButtonText: 'Great!'
+    });
+
+
+
     } catch (error) {
-      alert(error.message)
+      
+       // Display error alert
+       Swal.fire({
+      title: 'Error!',
+      text: error.message,
+      icon: 'error',
+      confirmButtonText: 'OK'
+    });
+
     } finally {
       setLoading(false)
     }
