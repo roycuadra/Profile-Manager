@@ -95,19 +95,18 @@ export default function Account({ session }) {
   }
 
   return (
-    <div className="container-fluid mt-3 mt-md-5"> {/* Adjusted margin top for mobile */}
-      <div className="row justify-content-center">
-        <div className="col-md-8 col-lg-6"> {/* Adjusted column width */}
-          <div className="card">
-            <div className="card-body">
-              <h2 className="card-title text-center mb-4">Account</h2>
-              <Avatar
-                url={avatar_url}
-                size={150}
-                onUpload={(url) => {
-                  setAvatarUrl(url)
-                  updateProfile({ username, website, avatar_url: url })
-                }}
+    <div className="container">
+    <div className="row justify-content-center">
+      <div className="col-12 col-sm-10 col-md-8 col-lg-6">
+        <div className="card">
+          <div className="card-body">
+            <h2 className="card-title text-center mb-4">Account</h2>
+            <Avatar
+              url={avatar_url}
+              size={150}
+              onUpload={(url) => {
+                setAvatarUrl(url);
+              }}
               />
               <form>
                 <div className="mb-3">
@@ -142,6 +141,7 @@ export default function Account({ session }) {
                 </div>
                 <div className="d-grid gap-2">
                   <button
+                    type="button"
                     className="btn btn-primary"
                     onClick={() => updateProfile({ username, website, avatar_url })}
                     disabled={loading}
@@ -149,6 +149,7 @@ export default function Account({ session }) {
                     {loading ? 'Loading ...' : 'Update'}
                   </button>
                   <button
+                    type="button"
                     className="btn btn-outline-danger"
                     onClick={() => supabase.auth.signOut()}
                   >
@@ -161,5 +162,5 @@ export default function Account({ session }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
