@@ -95,7 +95,7 @@ export default function Account({ session }) {
   }
 
   return (
-    <div className="container">
+    <div className="container justify-content-center">
     <div className="row justify-content-center">
       <div className="col-12 col-sm-10 col-md-8 col-lg-6">
         <div className="card">
