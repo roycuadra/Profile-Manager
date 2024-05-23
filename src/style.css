@@ -3,6 +3,13 @@ body {
     color: #ffffff;
    
   }
+
+  .element {
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  
   
   @media (max-width: 768px) {
     .swal2-popup {
