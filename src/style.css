@@ -4,6 +4,15 @@ body {
    
   }
   
+  @media (max-width: 768px) {
+    .swal2-popup {
+      font-size: 1.6rem; /* Increase font size for better readability */
+      width: auto; /* Adjust width to fit smaller screens */
+      height: auto; /* Adjust height accordingly */
+    }
+  }
+
+
   /* Adjusted margin for smaller screens */
 @media (max-width: 576px) {
     .container-fluid {

@@ -65,24 +65,29 @@ export default function Account({ session }) {
       }
 
        // Display success alert
-    Swal.fire({
-      title: 'Profile Updated!',
-      text: 'Your profile has been updated successfully.',
-      icon: 'success',
-      confirmButtonText: 'Great!'
-    });
+       Swal.fire({
+        title: 'Profile Updated!',
+        text: 'Your profile has been updated successfully.',
+        icon: 'success',
+        confirmButtonText: 'Great!',
+        width: 'auto', // Set width to auto for responsiveness
+        padding: '1rem', // Adjust padding
+        backdrop: true, // Enable backdrop for focus
+      });
 
 
 
     } catch (error) {
-      
-       // Display error alert
-       Swal.fire({
-      title: 'Error!',
-      text: error.message,
-      icon: 'error',
-      confirmButtonText: 'OK'
-    });
+
+      Swal.fire({
+        title: 'Error!',
+        text: error.message,
+        icon: 'error',
+        confirmButtonText: 'OK', // Added missing comma here
+        width: 'auto', // Set width to auto for responsiveness
+        padding: '1rem', // Adjust padding
+        backdrop: true, // Enable backdrop for focus
+      });      
 
     } finally {
       setLoading(false)
