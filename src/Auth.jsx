@@ -40,7 +40,7 @@ export default function Auth() {
       <div className="row justify-content-center">
         <div className="col-md-6">
           <div className="card p-4">
-            <h1 className="card-title text-center">User Management</h1>
+            <h1 className="card-title text-center">Profile Manager</h1>
             <p className="text-center text-black">Sign in via magic link with your email below</p>
             <form onSubmit={handleLogin}>
               <div className="form-floating mb-3">
